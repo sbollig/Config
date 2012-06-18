@@ -1,7 +1,7 @@
 " Scott's VIM config File
 "
 " Maintainer:   Scott Bollig sbollig@gmail.com	
-" Last change:	Fri Mar 23 17:25:54 PDT 2012
+" Last change:	Tue Jun  5 05:34:14 PDT 2012
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -91,7 +91,7 @@ endif
 set number              " line numbering
 " set search
 set incsearch		" do incremental searching
-set hlsearch
+"et hlsearch
 " set tabs
 set softtabstop=4 shiftwidth=4 
 set expandtab       "Convert all tabs typed to spaces
@@ -105,15 +105,27 @@ set nojoinspaces
 " map configuration
 map :q :confirm q
 noremap % v%  
-imap ;; <Esc>
+" Getting out of insert mode 
+map ;; <Esc>   
+" Getting into insert mode for just ONE command
+imap :: <C-O>
 
 " insert text configuration
 iab phdr #! /usr/bin/perl -w
 iab pstr use strict;
-
+iab sabmail sbollig@gmail.com
+iab sabname Scott A. Bollig
 " dictionary 
 set dictionary+=/usr/share/dict/words
 
 " autocomplete plugin
+set nocp
 filetype plugin on
-
+" autocommands for header
+"utocomd bufnewfile *.pl /home/sbollig/bin/pl_header.txt
+" Smart indentations to perform multiple indentations after selecting 
+" a Block
+:vnoremap < <gv
+:vnoremap > >gv
+"perl doc when entering K on a keyword
+:set keywordprg=perldoc\ -f
