@@ -1,7 +1,7 @@
-" Scott's VIM config File
+" Scott's VIM config File .vimrc
 "
 " Maintainer:   Scott Bollig sbollig@gmail.com	
-" Last change:	Tue Jun  5 05:34:14 PDT 2012
+" Last change:	Mon Jun 18 20:38:40 PDT 2012
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -18,7 +18,7 @@ if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file
-endif
+endif 
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -105,6 +105,8 @@ set nojoinspaces
 " map configuration
 map :q :confirm q
 noremap % v%  
+" map w to only timestamp if there are updates on a write.
+map :w :up
 " Getting out of insert mode 
 map ;; <Esc>   
 " Getting into insert mode for just ONE command
@@ -129,3 +131,7 @@ filetype plugin on
 :vnoremap > >gv
 "perl doc when entering K on a keyword
 :set keywordprg=perldoc\ -f
+"set the statusline
+:set statusline=Filename:%f\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
+:set laststatus=2
+"END
