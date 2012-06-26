@@ -93,10 +93,12 @@ set number              " line numbering
 set incsearch		" do incremental searching
 "et hlsearch
 " set tabs
-set softtabstop=4 shiftwidth=4 
+set softtabstop=4 shiftwidth=4 ts=4
 set expandtab       "Convert all tabs typed to spaces
 set shiftround      "Indent/outdent to nearest tabstop
-
+set smartindent     "do cleaver autoindenting
+set copyindent      "Copy whitespace for indenting from previous line
+set wm=0            "Margin from the right in which to break a line.
 set textwidth=78    "Wrap at this column
 set matchpairs+=<:> "Allow % to bounce between angles too
 set nojoinspaces
@@ -132,6 +134,6 @@ filetype plugin on
 "perl doc when entering K on a keyword
 :set keywordprg=perldoc\ -f
 "set the statusline
-:set statusline=Filename:%f\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
+:set statusline=Filename:%F\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
 :set laststatus=2
 "END
