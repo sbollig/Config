@@ -6,6 +6,7 @@
 [ -z "$PS1" ] && return
 
 echo This is Scott\'s Ubuntu HP Laptop
+export PATH=${PATH}:${HOME}/perl5/perlbrew/bin
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
