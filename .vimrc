@@ -89,6 +89,7 @@ endif
 " start of Scott config
 " set configuraiton
 set number              " line numbering
+:set numberwidth=3      " only three numbers instead of four
 " set search
 set incsearch		" do incremental searching
 "et hlsearch
@@ -138,6 +139,6 @@ filetype plugin on
 :set statusline=Filename:%F\ [Line:\ %l\ of\ %L]\ Col:\ %c\ %P\ %y\ %M\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
 :set laststatus=2
 "cusorline
-:highlight CursorLine ctermbg=Darkgray
+:highlight CursorLine term=bold cterm=bold ctermbg=darkgray
 :set cursorline
 "END
