@@ -106,7 +106,7 @@ set nojoinspaces
 
 " map configuration
 map :q :confirm q
-noremap % v%  
+"oremap % v%  
 " map w to only timestamp if there are updates on a write.
 map :w :up
 " Getting out of insert mode 
@@ -117,6 +117,7 @@ imap :: <C-O>
 " insert text configuration
 iab phdr #! /usr/bin/perl -w
 iab pstr use strict;
+iab pv510 use v5.10;
 iab sabmail sbollig@gmail.com
 iab sabname Scott A. Bollig
 " dictionary 
@@ -134,6 +135,6 @@ filetype plugin on
 "perl doc when entering K on a keyword
 :set keywordprg=perldoc\ -f
 "set the statusline
-:set statusline=Filename:%F\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
+:set statusline=Filename:%F\ [Line:\ %l\ of\ %L]\ Col:\ %c\ %P\ %y\ %M\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
 :set laststatus=2
 "END
