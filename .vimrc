@@ -137,4 +137,7 @@ filetype plugin on
 "set the statusline
 :set statusline=Filename:%F\ [Line:\ %l\ of\ %L]\ Col:\ %c\ %P\ %y\ %M\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
 :set laststatus=2
+"cusorline
+:highlight CursorLine ctermbg=Darkgray
+:set cursorline
 "END
