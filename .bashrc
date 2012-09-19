@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 echo This is Scott\'s Ubuntu HP Laptop
-export PATH=${PATH}:${HOME}/perl5/perlbrew/bin
+export PATH=${PATH}:${HOME}/perl5/perlbrew/bin:${HOME}/perl/perl1
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -55,7 +55,8 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="\w \$(parse_git_branch)\$ "
+    #S1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -107,3 +108,6 @@ fi
 
 # set command line vi
 set -o vi
+# Bash prompt with Git info
+#ource ~/.git-completion.sh
+export PS1='\h:\w\[\033[32m\]$(__git_ps1) \[\033[0m\]$ '
