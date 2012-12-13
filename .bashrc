@@ -107,7 +107,3 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 #set command line editing vi
 set -o vi
-#Mounting Remote Dirctories
-if [ "$LOGNAME = 'sbollig'" ]; then
-    sshfs -o idmap=user cold.useractive.com: ~/cold-useractive
-fi
