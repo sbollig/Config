@@ -8,6 +8,12 @@
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+echo This is Scott\'s Ubuntu HP Laptop
+export PATH=${PATH}:${HOME}/perl5/perlbrew/bin:${HOME}/perl/perl1
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -57,6 +63,8 @@ if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="\w \$(parse_git_branch)\$ "
+    #S1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -89,6 +97,13 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#lias ll='ls -alF'
+alias ll='ls -alt --color=auto'
+alias la='ls -A'
+alias l='ls -CF'
+alias cold='ssh cold.useractive.com'
+alias ost='ssh cold.useractive.com'
+alias mac='ssh imacsab -l Scott'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -107,3 +122,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 #set command line editing vi
 set -o vi
+
+# Bash prompt with Git info
+#ource ~/.git-completion.sh
+export PS1='\h:\w\[\033[32m\]$(__git_ps1) \[\033[0m\]$ '

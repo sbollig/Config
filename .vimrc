@@ -1,7 +1,7 @@
 " Scott's VIM config File .vimrc
 "
 " Maintainer:   Scott Bollig sbollig@gmail.com	
-" Last change:	Thu Dec 13 10:37:21 PST 2012
+" Last change:	Mon Jun 18 20:38:40 PDT 2012
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -52,7 +52,7 @@ if has("autocmd")
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+  "iletype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -89,6 +89,7 @@ endif
 " start of Scott config
 " set configuraiton
 set number              " line numbering
+:set numberwidth=2      " only two numbers instead of four
 " set search
 set incsearch		" do incremental searching
 "et hlsearch
@@ -126,8 +127,8 @@ iab sabname Scott A. Bollig
 set dictionary+=/usr/share/dict/words
 
 " autocomplete plugin
-set nocp
-filetype plugin on
+"et nocp
+"iletype plugin on
 
 " Smart indentations to perform multiple indentations after selecting 
 " a Block
@@ -136,12 +137,16 @@ filetype plugin on
 
 "perl doc when entering K on a keyword
 :set keywordprg=perldoc\ -f
-
 "set the statusline
 :set statusline=Filename:%F\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
 :set laststatus=2
 
 "set the CursorLine
+"perl doc when entering K on a keyword
+:set keywordprg=perldoc\ -f
+"set the statusline
+"set statusline=Filename:%F\ [Line:\ %l\ of\ %L]\ Col:\ %c\ %P\ %y\ %M\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
+"cusorline
 :highlight CursorLine term=bold cterm=bold ctermbg=darkgray
 :set cursorline
 "END
