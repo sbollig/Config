@@ -96,7 +96,7 @@ set incsearch		" do incremental searching
 " set tabs
 set softtabstop=4 shiftwidth=4 ts=4
 set expandtab       "Convert all tabs typed to spaces
-set shiftround      "Indent/outdent to nearest tabstop
+"set shiftround      "Indent/outdent to nearest tabstop
 set smartindent     "do cleaver autoindenting
 set copyindent      "Copy whitespace for indenting from previous line
 set wm=0            "Margin from the right in which to break a line.
