@@ -114,7 +114,7 @@ map :q :confirm q
 " map w to only timestamp if there are updates on a write.
 map :w :up
 " Getting out of insert mode 
-map ;; <Esc>   
+imap ;; <Esc>   
 " Getting into command mode for just ONE command
 imap :: <C-O>
 " Disable cursor keys
@@ -149,6 +149,8 @@ set dictionary+=/usr/share/dict/words
 :set statusline=Filename:%F\ Line:\ %l\ Col:\ %c\ %P\ %y\ %M\ sbollig
 :set laststatus=2
 
+" Use the same symbos as TextMate for the tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 "set the CursorLine
 "perl doc when entering K on a keyword
 :set keywordprg=perldoc\ -f
@@ -157,4 +159,6 @@ set dictionary+=/usr/share/dict/words
 "cusorline
 :highlight CursorLine term=bold cterm=bold ctermbg=darkgray
 :set cursorline
+"Invisible character colors
+
 "END
