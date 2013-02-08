@@ -107,13 +107,18 @@ set nojoinspaces
 
 " map configuration
 map :q :confirm q
-noremap % v%  
+"noremap % v%  
 " map w to only timestamp if there are updates on a write.
 map :w :up
 " Getting out of insert mode 
 map ;; <Esc>   
 " Getting into command mode for just ONE command
 imap :: <C-O>
+" Disable cursor keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " insert text configuration
 iab phdr #! /usr/bin/perl 
