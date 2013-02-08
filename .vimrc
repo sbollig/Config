@@ -70,6 +70,9 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+  
+  " Apply changes when after writing when modifying vimrc  
+  autocmd BufWritePost .vimrc source $MYVIMRC  
 
   augroup END
 
